@@ -1,0 +1,85 @@
+# Node modules and coverage:
+/node_modules/
+/coverage/
+
+# Environment configuration files:
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build artifacts:
+/build/
+/dist/
+/out/
+
+# Log files:
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Operating system files:
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE and editor directories:
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.swp
+*.swo
+
+# Dependency lock files (optional, consider including if you prefer consistent installs across environments):
+# package-lock.json
+# yarn.lock
+
+# TypeScript compiled files:
+*.js
+*.js.map
+*.jsx
+*.jsx.map
+# If you're compiling TypeScript files to a specific directory (like 'dist'), you might not need the above rules and just ignore the directory.
+
+# Parcel-bundler cache (if used):
+.cache
+
+# Next.js build output (if using Next.js in parts of your project):
+.next/
+/.pnp
+.pnp.js
+
+# Gatsby files (if using Gatsby for static site generation in parts of your project):
+.cache/
+/public/
+
+# macOS files:
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume:
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share:
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
