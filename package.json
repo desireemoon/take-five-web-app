@@ -1,0 +1,15 @@
+{
+  "name": "take-five-web-app",
+  "version": "1.0.0",
+  "description": "Full stack web app that gives users new activities to try every day.",
+  "main": "index.js",
+  "scripts": {
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm start",
+    "build:backend": "cd backend && npm run build",
+    "build:frontend": "cd frontend && npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
