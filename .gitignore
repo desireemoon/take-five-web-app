@@ -1,5 +1,5 @@
 # Node modules and coverage:
-/node_modules/
+node_modules/
 /coverage/
 
 # Environment configuration files:
