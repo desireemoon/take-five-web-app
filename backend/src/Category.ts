@@ -5,10 +5,11 @@ import mongoose, { Schema, Document } from "mongoose";
 interface ICategory extends Document {
     name: string;
     description: string;
+    activities: Schema.Types.ObjectId[];
 }
 
 // Create a Schema corresponding to the document interface.
-const CategorySchema: Schema = new Schema(
+const categorySchema: Schema = new Schema(
     {
         name: {
             type: String,
@@ -18,10 +19,14 @@ const CategorySchema: Schema = new Schema(
             type: String,
             required: true
         },
+        activities: [{
+            type: Schema.Types.ObjectId,
+            ref: 'Activity'
+        }],
     },
 );
 
 // Create a Model.
-const CategoryModel = mongoose.model<ICategory>('Cateogry', CategorySchema);
+const Category = mongoose.model<ICategory>('Category', categorySchema);
 
-export default CategoryModel;
+export default Category;
