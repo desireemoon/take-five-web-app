@@ -1,11 +1,12 @@
-//TODO: typescript of this :
-// const router = require('express').Router();
-// const apiRoutes = require('./api');
+import express, { Request, Response } from 'express';
+import apiRoutes from './api/index'; // Make sure to export the router in your 'api' module using TypeScript syntax
 
-// router.use('/api', apiRoutes);
+const router = express.Router();
 
-// router.use((req, res) => {
-//   return res.send('Wrong route!');
-// });
+router.use('/api', apiRoutes);
 
-// module.exports = router;
+router.use((req: Request, res: Response) => {
+  return res.send('Wrong route!');
+});
+
+export default router;
