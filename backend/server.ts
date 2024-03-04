@@ -1,8 +1,6 @@
 import express, { Request, Response } from "express";
 import { MongoClient, Db } from "mongodb";
-
-// TODO: figure out authorization and update accordingly
-// import authRoutes from './src/routes/api/authRoutes';
+import authRoutes from './src/routes/api/authRoutes';
 
 const app = express();
 const port = 3001;
@@ -31,9 +29,8 @@ client
 // Middleware
 app.use(express.json());
 
-// TODO: figure out authorization and update accordingly
 // Use the auth routes
-// app.use('/auth', authRoutes);
+app.use('/auth', authRoutes);
 
 // Routes
 app.post("/create", (req: Request, res: Response) => {
