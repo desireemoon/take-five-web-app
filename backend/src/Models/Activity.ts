@@ -6,6 +6,7 @@ interface IActivity extends Document {
   name: string;
   link: string;
   image: string;
+  imageAlt: string;
   description: string;
   categories: Schema.Types.ObjectId[];
 }
@@ -21,6 +22,10 @@ const activitySchema: Schema = new Schema({
     required: true,
   },
   image: {
+    type: String,
+    required: true,
+  },
+  imageAlt: {
     type: String,
     required: true,
   },
