@@ -1,17 +1,21 @@
 import express, { Request, Response } from "express";
 import { MongoClient, Db } from "mongodb";
 import authRoutes from "./src/routes/api/authRoutes";
+import allRoutes from "./src/routes/index";
+import "./mongoose"; // Import your MongoDB connection setup
+import dotenv from "dotenv";
 
 const app = express();
 const port = process.env.PORT || 3001;
 
-const connectionStringURI = `mongodb://127.0.0.1:27017`;
+const connectionStringURI = `mongodb://localhost:27017`;
 
 const client = new MongoClient(connectionStringURI);
 
 let db: Db;
 const dbName = "takeFiveDB";
 
+dotenv.config();
 client
   .connect()
   .then(() => {
@@ -31,3 +35,4 @@ app.use(express.json());
 
 // Use the auth routes
 app.use("/auth", authRoutes);
+app.use("/", allRoutes);
