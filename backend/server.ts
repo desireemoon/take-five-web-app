@@ -1,9 +1,9 @@
 import express, { Request, Response } from "express";
 import { MongoClient, Db } from "mongodb";
-import authRoutes from './src/routes/api/authRoutes';
+import authRoutes from "./src/routes/api/authRoutes";
 
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 const connectionStringURI = `mongodb://127.0.0.1:27017`;
 
@@ -19,7 +19,7 @@ client
     db = client.db(dbName);
 
     app.listen(port, () => {
-      console.log(`Example app listening at http://localhost:${port}`);
+      console.log(`App listening at http://localhost:${port}`);
     });
   })
   .catch((err) => {
@@ -30,45 +30,4 @@ client
 app.use(express.json());
 
 // Use the auth routes
-app.use('/auth', authRoutes);
-
-// Routes
-app.post("/create", (req: Request, res: Response) => {
-  db.collection("bookCollection")
-    .insertOne({ title: req.body.title, author: req.body.author })
-    .then((results) => res.json(results))
-    .catch((err) => {
-      console.error(err);
-      res.status(500).json({ message: "An error occurred" });
-    });
-});
-
-app.post("/create-many", (req: Request, res: Response) => {
-  db.collection("bookCollection")
-    .insertMany([
-      { title: "Oh the Places We Will Go!" },
-      { title: "Diary of Anne Frank" },
-    ])
-    .then((results) => res.json(results))
-    .catch((err) => {
-      console.error(err);
-      res.status(500).json({ message: "An error occurred" });
-    });
-});
-
-app.get("/read", (req: Request, res: Response) => {
-  db.collection("bookCollection")
-    .find({})
-    .toArray()
-    .then((results) => res.json(results))
-    .catch((err) => {
-      console.error(err);
-      res.status(500).json({ message: "An error occurred" });
-    });
-});
-
-// Start server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+app.use("/auth", authRoutes);
