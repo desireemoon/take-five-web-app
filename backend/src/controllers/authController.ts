@@ -50,7 +50,6 @@ export const login = async (req: Request, res: Response) => {
       process.env.JWT_SECRET_KEY as string,
       { expiresIn: "1h" }
     );
-    console.log("JWT Secret Key:", process.env.JWT_SECRET_KEY);
     res.json({ message: "Login successful", token });
   } catch (error) {
     console.error("Login error:", error); // Log the full error to the console
