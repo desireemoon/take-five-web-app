@@ -7,6 +7,7 @@ interface IUser extends Document {
   name: string;
   email: string;
   password: string;
+  roles: string[];
   categories: Schema.Types.ObjectId[];
   friends: IUser["_id"][];
   favorites: mongoose.Types.ObjectId[];
@@ -33,6 +34,12 @@ const userSchema: Schema = new Schema({
     type: String,
     required: true,
   },
+  roles: [{
+    type: String,
+    required: true,
+    enum: ['admin', 'user'], //Specify allowed roles
+    default: 'user' // Default role for new users
+  }],
   categories: [
     {
       type: Schema.Types.ObjectId,
