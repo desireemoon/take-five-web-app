@@ -8,7 +8,8 @@ import dotenv from "dotenv";
 const app = express();
 const port = process.env.PORT || 3001;
 
-const connectionStringURI = `mongodb://localhost:27017`;
+// TODO: Split out using local connections vs prod connections
+const connectionStringURI = process.env.MONGODB_URI || `mongodb://localhost:27017`;
 
 const client = new MongoClient(connectionStringURI);
 
