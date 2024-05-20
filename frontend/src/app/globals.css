@@ -1,33 +1,29 @@
+/* src/app/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 126, 127, 154;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
+/* Custom Global Styles */
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply bg-gray-50 text-gray-800 antialiased;
+  font-family: 'Roboto', sans-serif; /* Default font */
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif; /* Headers font */
+}
+
+/* Custom Classes */
+
+.btn-primary {
+  @apply bg-yellow-400 text-white px-4 py-2 rounded hover:bg-yellow-500;
+}
+
+.btn-secondary {
+  @apply bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600;
+}
+
+.custom-input {
+  @apply bg-white text-gray-800 px-4 py-2 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-yellow-400;
 }
