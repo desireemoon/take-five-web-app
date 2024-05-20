@@ -1,15 +1,22 @@
-import Image from "next/image";
+// src/app/page.tsx
+import HomepageHeader from './components/HomepageHeader';
+import Hero from './components/Hero';
+import AboutUs from './components/AboutUs';
+import HowItWorks from './components/HowItWorks';
+// import WhyChooseUs from '../components/WhyChooseUs';
+// import JoinCommunity from '../components/JoinCommunity';
+// import Footer from '../components/Footer';
 
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <h1>Take Five</h1>
-      <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Five minute activities to bring delight to your day.
-          </p>
-      </div>
-    </main>
-  );
-}
+const Home = () => (
+  <>
+    <HomepageHeader />
+    <Hero />
+    <AboutUs />
+    <HowItWorks />
+    {/* <WhyChooseUs />
+    <JoinCommunity />
+    <Footer /> */}
+  </>
+);
+
+export default Home;
