@@ -3,9 +3,9 @@ import HomepageHeader from './components/HomepageHeader';
 import Hero from './components/Hero';
 import AboutUs from './components/AboutUs';
 import HowItWorks from './components/HowItWorks';
-// import WhyChooseUs from '../components/WhyChooseUs';
-// import JoinCommunity from '../components/JoinCommunity';
-// import Footer from '../components/Footer';
+import WhyChooseUs from './components/WhyChooseUs';
+import JoinCommunity from './components/JoinCommunity';
+import Footer from './components/Footer';
 
 const Home = () => (
   <>
@@ -13,9 +13,9 @@ const Home = () => (
     <Hero />
     <AboutUs />
     <HowItWorks />
-    {/* <WhyChooseUs />
+    <WhyChooseUs />
     <JoinCommunity />
-    <Footer /> */}
+    <Footer />
   </>
 );
 
