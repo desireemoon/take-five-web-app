@@ -2,8 +2,11 @@ import express, { Request, Response } from "express";
 import { MongoClient, Db } from "mongodb";
 import authRoutes from "./src/routes/api/authRoutes";
 import allRoutes from "./src/routes/index";
-import "./mongoose"; // Import your MongoDB connection setup
 import dotenv from "dotenv";
+import cors from 'cors'; // Add this import
+import "./mongoose"; // Import your MongoDB connection setup
+
+dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3001;
@@ -16,7 +19,14 @@ const client = new MongoClient(connectionStringURI);
 let db: Db;
 const dbName = "takeFiveDB";
 
-dotenv.config();
+// Middleware
+app.use(cors()); // Enable CORS
+app.use(express.json());
+
+// Use the auth routes
+app.use("/auth", authRoutes);
+app.use("/", allRoutes);
+
 client
   .connect()
   .then(() => {
@@ -30,10 +40,3 @@ client
   .catch((err) => {
     console.error("Mongo connection error: ", err.message);
   });
-
-// Middleware
-app.use(express.json());
-
-// Use the auth routes
-app.use("/auth", authRoutes);
-app.use("/", allRoutes);
