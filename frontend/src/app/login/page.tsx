@@ -28,8 +28,8 @@ const Login: React.FC = () => {
       const data = await response.json();
       // Save the token to local storage or cookies
       localStorage.setItem("token", data.token);
-        alert("successful login!")
-      // router.push("/dashboard");
+        // alert("successful login!")
+        router.push("/homepage");
     } catch (error) {
       alert(error);
       // alert(error.message);

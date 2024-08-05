@@ -1,15 +1,17 @@
 // src/app/page.tsx
-import HomepageHeader from './components/HomepageHeader';
-import Hero from './components/Hero';
-import AboutUs from './components/AboutUs';
-import HowItWorks from './components/HowItWorks';
-import WhyChooseUs from './components/WhyChooseUs';
-import JoinCommunity from './components/JoinCommunity';
-import Footer from './components/Footer';
+import LandingHeader from "./components/LandingHeader";
+import Hero from "./components/Hero";
+import AboutUs from "./components/AboutUs";
+import HowItWorks from "./components/HowItWorks";
+import WhyChooseUs from "./components/WhyChooseUs";
+import JoinCommunity from "./components/JoinCommunity";
+import Footer from "./components/Footer";
 
-const Home = () => (
+const App = () => (
   <>
-    <HomepageHeader />
+    {/* <Header /> <-- <LandingHeader /> || <LoggedInHeader /> || No Header */}
+    {/* <Main /> <-- All the below stuff as  <LandingMain /> || <Login /> || <Register /> || <LoggedIn />  */}
+    <LandingHeader />
     <Hero />
     <AboutUs />
     <HowItWorks />
@@ -19,4 +21,4 @@ const Home = () => (
   </>
 );
 
-export default Home;
+export default App;
