@@ -43,7 +43,7 @@ const Header = () => {
           )}
         </button>
         <Link
-          href="/get-started"
+          href="/signUp"
           className="hidden md:block bg-yellow-400 text-green-500 px-4 py-2 rounded hover:bg-yellow-500"
         >
           Get Started
@@ -86,7 +86,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                href="/get-started"
+                href="/signUp"
                 className="block bg-yellow-400 text-white px-4 py-2 rounded hover:bg-yellow-500"
               >
                 Get Started
