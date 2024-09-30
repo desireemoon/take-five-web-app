@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const WhyChooseUs = () => (
-  <section className="bg-white py-12 md:py-16 px-6 md:px-12">
+  <section className="bg-white py-12 md:py-16 px-6 md:px-12" id="WhyChoose">
     <div className="container mx-auto text-center">
       <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
         Why Choose Take Five?

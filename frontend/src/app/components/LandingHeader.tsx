@@ -16,17 +16,20 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         <div className="text-3xl font-bold text-green-500">Take Five</div>
         <nav className="hidden md:flex space-x-6">
-          <Link href="/about" className="text-gray-700 hover:text-green-500">
+          <Link href="#About" className="text-gray-700 hover:text-green-500">
             About Us
           </Link>
           <Link
-            href="/how-it-works"
+            href="#HowItWorks"
             className="text-gray-700 hover:text-green-500"
           >
             How It Works
           </Link>
-          <Link href="/features" className="text-gray-700 hover:text-green-500">
-            Features
+          <Link
+            href="#WhyChoose"
+            className="text-gray-700 hover:text-green-500"
+          >
+            Why Choose Us
           </Link>
           <Link href="/login" className="text-gray-700 hover:text-green-500">
             Login
@@ -59,7 +62,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                href="/how-it-works"
+                href="#how-it-works"
                 className="block text-gray-700 hover:text-green-500"
               >
                 How It Works
